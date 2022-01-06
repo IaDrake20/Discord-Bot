@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Ian of Drake\\Documents\\Discord JDA"
+    ]
+}
