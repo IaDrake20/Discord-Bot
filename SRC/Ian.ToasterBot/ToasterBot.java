@@ -1,3 +1,4 @@
+import net.dv8tion.jda.core.JDA;
 
 
 public class ToasterBot {
@@ -6,16 +7,6 @@ public class ToasterBot {
 
     public static void main(String[]args){
 
-        jda = new JDABuilder(AccountType.BOT).setToken(ODg4MDUwNTE4ODUxNzMxNDY2.YUNDfg.N1szM9_qdKF6yPmtxYbX4c_kjus).buildAsync();
-    }
-    
-    public class CommandName implements ServerCommand {
-    
-        @Override
-        public void performCommand(Member member, TextChannel channel, Message message) {
-    
-            channel.sendMessage("template command");
-    
-        }
+        jda = new JDABuilder(AccountType.BOT).setToken(hi).buildAsync();
     }
 }
