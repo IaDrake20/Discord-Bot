@@ -10,7 +10,7 @@ public class BotStartUp {
  
     public static void main(String[]args) throws LoginException{
 
-        JDABuilder jda = JDABuilder.createDefault("hi");
+        JDABuilder jda = JDABuilder.createDefault("");
         jda.setActivity(Activity.listening("Children of the Omnissiah"));
         jda.setStatus(OnlineStatus.ONLINE);
         jda.addEventListeners(new Commands());
