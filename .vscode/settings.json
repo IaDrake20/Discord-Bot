@@ -1,6 +1,8 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\Ian of Drake\\Documents\\Discord JDA"
-    ]
+        "c:\\Users\\Ian of Drake\\Documents\\Discord JDA",
+        "c:\\Users\\Ian of Drake\\Downloads\\JDA-5.0.0-alpha.3_97fcd62-withDependencies.jar"
+    ],
+    "files.autoSave": "onWindowChange"
 }
