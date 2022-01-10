@@ -37,20 +37,37 @@ public class Commands extends ListenerAdapter{
             //channel.sendMessage("ligma ball bearing joints.").queue();
         }
 
+        if (msg.getContentRaw().equalsIgnoreCase(prefix+"Who is the best bot?")){
+            event.getMessage().reply("Clearly I am").queue();
+        }
+
+        if (msg.getContentRaw().contains(prefix+"BtT")){
+            String msgContent = msg.getContentRaw();
+            msgContent = TextToBinary.binaryToText(msgContent);
+            event.getMessage().reply(msgContent).queue();
+        }
+
+        if (msg.getContentRaw().equalsIgnoreCase(prefix+"Toast")){
+            event.getMessage().reply("Finding Pictures of Toast(WIP)").queue();
+        }
+
         //if (msg.getContentRaw().equalsIgnoreCase(prefix+"TtB Hello there!")){
          //   //MessageChannel channel = event.getChannel();
           //  event.getMessage().reply("010010000110010101101100011011000110111100100000011101000110100001100101011100100110010100100001").queue();
         //}
 
+        
         if (msg.getContentRaw().contains(prefix+"TtB")){
 
             String msgContent = msg.getContentRaw();
-            TextToBinary.textToBinary(msgContent);
+            msgContent = TextToBinary.textToBinary(msgContent);
             event.getMessage().reply(msgContent).queue();
         }
 
+        
+
         if (msg.getContentRaw().equalsIgnoreCase(prefix+"help")){
-            event.getMessage().reply("A list of current commands is as follows. \n<<Say Something \n<<Steve jobs died of ligma \n<<TtB Hello there \n<<TtB means Text to Binary. This is currently a WIP").queue();
+            event.getMessage().reply("A list of current commands is as follows. Use '<<' for commands. \nSay Something \nSteve jobs died of ligma \nTtB means Text to Binary. This is currently a WIP. \nBtT means Binary to Text. \nAny Questions? @Ian if so.").queue();
         }
 
     }
