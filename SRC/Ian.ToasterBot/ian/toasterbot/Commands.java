@@ -52,6 +52,8 @@ public class Commands extends ListenerAdapter{
             userInput = userInput.substring(2);
             ImScraper.setHtml(userInput);
             event.getMessage().reply(ImScraper.scrape()).queue();
+           
+    
             //System.out.println(userInput);
             //String result = ImScraper.scrape();
             //event.getChannel().sendMessage(ImScraper.scrape()).queue();
@@ -62,6 +64,8 @@ public class Commands extends ListenerAdapter{
          //   //MessageChannel channel = event.getChannel();
           //  event.getMessage().reply("010010000110010101101100011011000110111100100000011101000110100001100101011100100110010100100001").queue();
         //}
+
+        if(msg.)
 
         if(msg.getContentRaw().contains(prefix+"Shame")){
             String text = msg.getContentRaw();
@@ -89,7 +93,7 @@ public class Commands extends ListenerAdapter{
         
 
         if (msg.getContentRaw().equalsIgnoreCase(prefix+"help")){
-            event.getMessage().reply("A list of current commands is as follows. Use '<<' for commands. \nSay Something \nSteve jobs died of ligma \nShame \nTtB means Text to Binary. This is currently a WIP. \nBtT means Binary to Text. \nAny Questions? @Ian if so.").queue();
+            event.getMessage().reply("A list of current commands is as follows. Use '<<' for commands. \nSay Something \nSteve jobs died of ligma \nShame \nTtB means Text to Binary. TODO: remove \"<<\" from String. \nBtT means Binary to Text. \nAny Questions? @Ian if so.").queue();
         }
 
     }

@@ -11,9 +11,10 @@ import java.io.IOException;
 
 public class ImScraper {
 
-    private static final String link = "https://www.google.com/search?q=";
     private static String text = "";
     private static String imageUrl = "";
+    private static String link = "https://www.google.com/search?q="+text+"&tbm=isch&sxsrf=AOaemvJvHPZgaO1CT2liDgkRarOOlVQeyg:1641917135681&source=hp&biw=1920&bih=927&ei=z6rdYeLRJvLLytMP2pGLqAo&iflsig=ALs-wAMAAAAAYd24394FZFKkyYuGTc6pTnfFwJ9rVHtQ&oq=&gs_lcp=CgNpbWcQARgAMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCyCGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEI&sclient=img";
+
 
     public static void setHtml(String search){
 
@@ -21,9 +22,11 @@ public class ImScraper {
     }
 
     public static String scrape(){
-        System.out.println("Scraping for images of "+text+" at "+link+text);
-        Document document = Jsoup.parse(link+text);
+        System.out.println("Scraping for images of "+text+" at "+link);
+        Document document = Jsoup.parse(link);
         Elements images = document.select("img");
+
+        System.out.println("above for loop");
         
         for (Element image : images) {
             System.out.println("Iteration");
@@ -33,6 +36,11 @@ public class ImScraper {
                 break;
             }
         }
-        return imageUrl;
+
+        for (Element image : images) {
+            String imageUrl = image.attr("data-original");
+            System.out.println(imageUrl);
+        }
+        return "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/ToastedWhiteBread.jpg/220px-ToastedWhiteBread.jpg";
     }
 }
