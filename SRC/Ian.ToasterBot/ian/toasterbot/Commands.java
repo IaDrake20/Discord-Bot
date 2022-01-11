@@ -31,7 +31,7 @@ public class Commands extends ListenerAdapter{
             //channel.sendMessage("ligma ball bearing joints.").queue();
         }
 
-        if (msg.getContentRaw().equalsIgnoreCase(prefix+"Kill Mudae")){
+        if (msg.getContentRaw().equalsIgnoreCase(prefix+"Kill")){
             //MessageChannel channel = event.getChannel();
             event.getMessage().reply("Revving the Heavy Flamer and blessing the Cognis Cannons").queue();
             //channel.sendMessage("ligma ball bearing joints.").queue();
@@ -48,7 +48,14 @@ public class Commands extends ListenerAdapter{
         }
 
         if (msg.getContentRaw().equalsIgnoreCase(prefix+"Toast")){
-            event.getMessage().reply("Finding Pictures of Toast(WIP)").queue();
+            String userInput = msg.getContentRaw();
+            userInput = userInput.substring(2);
+            ImScraper.setHtml(userInput);
+            event.getMessage().reply(ImScraper.scrape()).queue();
+            //System.out.println(userInput);
+            //String result = ImScraper.scrape();
+            //event.getChannel().sendMessage(ImScraper.scrape()).queue();
+            //event.
         }
 
         //if (msg.getContentRaw().equalsIgnoreCase(prefix+"TtB Hello there!")){
@@ -56,7 +63,22 @@ public class Commands extends ListenerAdapter{
           //  event.getMessage().reply("010010000110010101101100011011000110111100100000011101000110100001100101011100100110010100100001").queue();
         //}
 
-        
+        if(msg.getContentRaw().contains(prefix+"Shame")){
+            String text = msg.getContentRaw();
+            text = text.substring(7);
+
+            if(text.contains("Scottish_Monk") || text.contains("iosdrake")){
+                event.getMessage().reply("No.").queue();
+            }
+
+            if(msg.getContentRaw().contains(prefix+"Omnissiah's Toaster")){
+                event.getMessage().reply("No, I would never do anything that deserves shaming. My bionic flesh trembles with cold, hard, and throbing facts of science.").queue();
+            }
+            else {
+                event.getChannel().sendMessage("No "+text+". Bad. Stop it. Get some help before I turn you into a walking turret that dispenses oil margaritas.").queue();
+            }
+        }
+
         if (msg.getContentRaw().contains(prefix+"TtB")){
 
             String msgContent = msg.getContentRaw();
@@ -67,16 +89,17 @@ public class Commands extends ListenerAdapter{
         
 
         if (msg.getContentRaw().equalsIgnoreCase(prefix+"help")){
-            event.getMessage().reply("A list of current commands is as follows. Use '<<' for commands. \nSay Something \nSteve jobs died of ligma \nTtB means Text to Binary. This is currently a WIP. \nBtT means Binary to Text. \nAny Questions? @Ian if so.").queue();
+            event.getMessage().reply("A list of current commands is as follows. Use '<<' for commands. \nSay Something \nSteve jobs died of ligma \nShame \nTtB means Text to Binary. This is currently a WIP. \nBtT means Binary to Text. \nAny Questions? @Ian if so.").queue();
         }
 
     }
 
-    public void printCommands(int numCommands){
+    public String printCommands(int numCommands){
         
         System.out.println("A list of commands will be shown below. You can command me by typing <<. The commands are NOT case sensitive.");
         System.out.println("<<Say Something -This will have me say something random, unless Ian forgot to write up multiple responses.");
         System.out.println("<<Steve jobs died of ligma -Is joke");
         System.out.println("<<TtB yourTextHere -Will hopefully translate the written words to 1s and 0s.");
+        return "";
     }
 }

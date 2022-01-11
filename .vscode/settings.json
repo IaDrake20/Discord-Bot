@@ -2,7 +2,8 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\Ian of Drake\\Documents\\Discord JDA",
-        "c:\\Users\\Ian of Drake\\Downloads\\JDA-5.0.0-alpha.3_97fcd62-withDependencies.jar"
+        "c:\\Users\\Ian of Drake\\Downloads\\JDA-5.0.0-alpha.3_97fcd62-withDependencies.jar",
+        "c:\\Users\\Ian of Drake\\Downloads\\jsoup-1.14.3.jar"
     ],
     "files.autoSave": "onWindowChange"
 }
