@@ -8,6 +8,8 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+import java.util.Random;
+
 public class Commands extends ListenerAdapter{
     
     public String prefix = "<<";
@@ -65,7 +67,38 @@ public class Commands extends ListenerAdapter{
           //  event.getMessage().reply("010010000110010101101100011011000110111100100000011101000110100001100101011100100110010100100001").queue();
         //}
 
-        if(msg.)
+        if(msg.getContentRaw().contains("shut up please")){
+
+            event.getMessage().reply("No u").queue();
+        }
+
+        if(msg.getContentRaw().contains("chemistry")){
+
+            Random random = new Random();
+            int num = random.nextInt(4);
+            Double special = random.nextDouble();
+
+            switch(num){
+                case 0: event.getMessage().reply("Please stop. The cogitation required by smaller brained members of the discord to understand what you are saying is more than enough to destory a planet. Quick someone write that idea down!").queue();
+                        break;
+                
+                case 1: event.getMessage().reply("Chemistry detected. Deploying medical units for lower IQ discord members. Subjects will not be named.").queue();
+                        break;
+
+                case 2: event.getMessage().reply("Why must you torture them like this? Do it more.").queue();
+                        break;
+
+                case 3: event.getMessage().reply("Please, tell them more! They are just *dying* to hear you!").queue();
+                        break;
+                
+                case 4: event.getMessage().reply("Oxygen, hydrogen, sulfur, sodium, and phosphorous walk into a bar. “OH SNaP!” says the bartender.").queue();
+                        break;
+            }
+
+            if(special == 0.1){
+                event.getMessage().reply("A is for Absolute Alcohol... B is for Background Radiation... C is for Cadmium... D is for Dalton's Law... E is for Effective Nuclear Charge... F is for Fusion... G is for Gadolinium... H is for Haber Process... I is for IUPAC... J is for (Click to Expand)").queue();;
+            }
+        }
 
         if(msg.getContentRaw().contains(prefix+"Shame")){
             String text = msg.getContentRaw();

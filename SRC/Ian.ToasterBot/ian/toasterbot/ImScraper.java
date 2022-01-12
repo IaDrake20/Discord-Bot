@@ -28,6 +28,7 @@ public class ImScraper {
 
         System.out.println("above for loop");
         
+        /*
         for (Element image : images) {
             System.out.println("Iteration");
             String imageUrl = image.attr("data-original");
@@ -36,11 +37,14 @@ public class ImScraper {
                 break;
             }
         }
+        */
+
+        
 
         for (Element image : images) {
-            String imageUrl = image.attr("data-original");
+            imageUrl = image.attr("data-original");
             System.out.println(imageUrl);
         }
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/ToastedWhiteBread.jpg/220px-ToastedWhiteBread.jpg";
+        return imageUrl;//"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/ToastedWhiteBread.jpg/220px-ToastedWhiteBread.jpg";
     }
 }
