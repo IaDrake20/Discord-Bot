@@ -62,6 +62,19 @@ public class Commands extends ListenerAdapter{
             //event.
         }
 
+        if (msg.getContentRaw().equalsIgnoreCase(prefix+"")){
+            String userInput = msg.getContentRaw();
+
+            //remove command prefix from string
+            userInput = userInput.substring(2);
+
+            //let the scraper know what to look for
+            ImScraper.setHtml(userInput);
+
+            
+            event.getMessage().reply(ImScraper.scrape()).queue();
+        }
+
         //if (msg.getContentRaw().equalsIgnoreCase(prefix+"TtB Hello there!")){
          //   //MessageChannel channel = event.getChannel();
           //  event.getMessage().reply("010010000110010101101100011011000110111100100000011101000110100001100101011100100110010100100001").queue();
