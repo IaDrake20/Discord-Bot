@@ -121,7 +121,7 @@ public class Commands extends ListenerAdapter{
                 event.getMessage().reply("No.").queue();
             }
 
-            if(msg.getContentRaw().contains(prefix+"Omnissiah's Toaster")){
+            else if(msg.getContentRaw().contains(prefix+"Omnissiah's Toaster")){
                 event.getMessage().reply("No, I would never do anything that deserves shaming. My bionic flesh trembles with cold, hard, and throbing facts of science.").queue();
             }
             else {
