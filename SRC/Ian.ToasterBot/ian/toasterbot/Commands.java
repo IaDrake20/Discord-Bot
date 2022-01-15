@@ -125,7 +125,24 @@ public class Commands extends ListenerAdapter{
                 event.getMessage().reply("No, I would never do anything that deserves shaming. My bionic flesh trembles with cold, hard, and throbing facts of science.").queue();
             }
             else {
-                event.getChannel().sendMessage("No "+text+". Bad. Stop it. Get some help before I turn you into a walking turret that dispenses oil margaritas.").queue();
+                Random random = new Random();
+                int num = random.nextInt(4);
+                Double special = random.nextDouble();
+
+                switch(num){
+                    case 0: event.getChannel().sendMessage("No "+text+". Bad. Stop it. Get some help before I turn you into a walking turret that dispenses oil margaritas.").queue();
+                            break;
+                    
+                    case 1: event.getChannel().sendMessage("Bad "+text+".You have dishonored your entire unit. Luckily you all will recieve the express honor of being lobotomized, fitted with explosives, and sent to die in some hell in the great toaster's name! ").queue();
+                            break;
+                    
+                    case 2: event.getChannel().sendMessage("Drat you "+text+". You've done it again. Shame...Shame...").queue();
+                            break;
+
+                    case 3: event.getChannel().sendMessage(text+" needs to learn a lesson people. Regardless of whether you have sinned with the horny or made a terrible joke, shame on you.").queue();
+                            break;
+
+                }
             }
         }
 
