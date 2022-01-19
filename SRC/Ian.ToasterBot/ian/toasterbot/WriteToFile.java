@@ -8,9 +8,8 @@ public class WriteToFile {
   public static void write(String text) {
 
     try {
-      FileWriter myWriter = new FileWriter("C:\\Users\\Ian of Drake\\Documents\\GitHub\\Discord-Bot\\SRC\\Ian.ToasterBot\\ian\\toasterbot\\Suggestions.txt");
-      //myWriter.write(text);
-      myWriter.append(text);
+      FileWriter myWriter = new FileWriter("C:\\Users\\Ian of Drake\\Documents\\GitHub\\Discord-Bot\\SRC\\Ian.ToasterBot\\ian\\toasterbot\\Suggestions.txt", true);
+      myWriter.write(text);
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
 
