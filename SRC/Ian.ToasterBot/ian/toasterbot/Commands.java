@@ -80,6 +80,11 @@ public class Commands extends ListenerAdapter{
           //  event.getMessage().reply("010010000110010101101100011011000110111100100000011101000110100001100101011100100110010100100001").queue();
         //}
 
+        if(msg.getContentRaw().equalsIgnoreCase(prefix+"Bet")){
+            event.getMessage().reply("How much would you like to bet? And what do you want to bet on?");
+            
+        }
+
         if(msg.getContentRaw().contains("shut up please")){
 
             event.getMessage().reply("No u").queue();
@@ -146,6 +151,14 @@ public class Commands extends ListenerAdapter{
             }
         }
 
+        if(msg.getContentRaw().equalsIgnoreCase("lol") && msg.getAuthor().getName().equalsIgnoreCase("iosdrake")){
+            event.getMessage().reply("lmao").queue();
+        }
+
+        if(msg.getContentRaw().equalsIgnoreCase(prefix+"Heresy")){
+            event.getMessage().reply("https://media1.tenor.com/images/0af6bd247117c71b9c7c74472639a338/tenor.gif?itemid=9829547").queue();
+        }
+
         if (msg.getContentRaw().contains(prefix+"TtB")){
 
             String msgContent = msg.getContentRaw();
@@ -153,10 +166,21 @@ public class Commands extends ListenerAdapter{
             event.getMessage().reply(msgContent).queue();
         }
 
-        
+        if(msg.getContentRaw().contains(prefix+"Praise")){
+            String user = msg.getContentRaw().substring(8); 
+
+            event.getMessage().reply("Good job "+user+"! As a reward, your lobotomization will be postponed. :)").queue();
+        }
 
         if (msg.getContentRaw().equalsIgnoreCase(prefix+"help")){
             event.getMessage().reply("A list of current commands is as follows. Use '<<' for commands. \nSay Something \nSteve jobs died of ligma \nShame \nTtB means Text to Binary. TODO: remove \"<<\" from String. \nBtT means Binary to Text. \nAny Questions? @Ian if so.").queue();
+        }
+
+        if(msg.getContentRaw().contains(prefix+"Suggest")){
+            String text = msg.getContentRaw().substring(10);
+            WriteToFile.write(text);
+            System.out.println(text);
+            event.getMessage().reply("The suggestion was given to a scribe to bring to Ian's attention. Thanks for the suggestion!").queue();
         }
 
     }
