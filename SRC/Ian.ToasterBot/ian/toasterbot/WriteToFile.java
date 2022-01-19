@@ -8,9 +8,9 @@ public class WriteToFile {
   public static void write(String text) {
 
     try {
-      FileWriter myWriter = new FileWriter("Suggestions.txt");
-      myWriter.write("text");
-      myWriter.write("arhiagvlylaerygvlevu ");
+      FileWriter myWriter = new FileWriter("C:\\Users\\Ian of Drake\\Documents\\GitHub\\Discord-Bot\\SRC\\Ian.ToasterBot\\ian\\toasterbot\\Suggestions.txt");
+      //myWriter.write(text);
+      myWriter.append(text);
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
 
@@ -18,10 +18,5 @@ public class WriteToFile {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
-  }
-
-  public static void main(String[]args){
-
-    write("HEllo Worls");
   }
 }
