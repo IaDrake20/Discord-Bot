@@ -7,13 +7,16 @@ import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.Random;
 
 public class Commands extends ListenerAdapter{
     
     public String prefix = "<<";
     public TextToBinary tTBin = new TextToBinary();
+    static int interval;
+    static Timer timer = new Timer();
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
@@ -166,6 +169,10 @@ public class Commands extends ListenerAdapter{
             event.getMessage().reply(msgContent).queue();
         }
 
+        if(msg.getContentRaw().equalsIgnoreCase(prefix+"DRG")){
+            event.getMessage().reply("https://media.tenor.co/videos/25714bf049c34f907dae3165fe53343b/mp4").queue();
+        }
+
         if(msg.getContentRaw().contains(prefix+"Praise")){
             String user = msg.getContentRaw().substring(8); 
 
@@ -183,6 +190,18 @@ public class Commands extends ListenerAdapter{
             event.getMessage().reply("The suggestion was given to a scribe to bring to Ian's attention. Thanks for the suggestion!").queue();
         }
 
+        int delay = 1000;
+        int period = 1000;
+        timer = new Timer();
+        interval = 3600;
+        timer.scheduleAtFixedRate(new TimerTask() {
+
+        }, delay, period);
+
+    private static final int setInterval() {
+        if (interval == 1)
+            timer.cancel();
+        return --interval;
     }
 
     public String printCommands(int numCommands){

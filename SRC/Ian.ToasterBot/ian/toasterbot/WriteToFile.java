@@ -2,6 +2,7 @@ package ian.toasterbot;
 
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
+import java.util.Iterator;
 
 public class WriteToFile {
 
