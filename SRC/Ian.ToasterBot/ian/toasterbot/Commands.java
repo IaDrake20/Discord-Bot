@@ -129,7 +129,7 @@ public class Commands extends ListenerAdapter{
                 event.getMessage().reply("No.").queue();
             }
 
-            else if(msg.getContentRaw().contains(prefix+"Omnissiah's Toaster")){
+            else if(msg.getContentRaw().contains(prefix+"Shame @Omnissiah's Toaster")){
                 event.getMessage().reply("No, I would never do anything that deserves shaming. My bionic flesh trembles with cold, hard, and throbing facts of science.").queue();
             }
             else {
@@ -169,6 +169,13 @@ public class Commands extends ListenerAdapter{
             event.getMessage().reply(msgContent).queue();
         }
 
+        if (msg.getContentRaw().contains(prefix+"BtT")){
+
+            String msgContent = msg.getContentRaw();
+            msgContent = TextToBinary.binaryToText(msgContent);
+            event.getMessage().reply(msgContent).queue();
+        }
+
         if(msg.getContentRaw().equalsIgnoreCase(prefix+"DRG")){
             event.getMessage().reply("https://media.tenor.co/videos/25714bf049c34f907dae3165fe53343b/mp4").queue();
         }
@@ -188,28 +195,7 @@ public class Commands extends ListenerAdapter{
             WriteToFile.write(text);
             System.out.println(text);
             event.getMessage().reply("The suggestion was given to a scribe to bring to Ian's attention. Thanks for the suggestion!").queue();
-        }
-
-        int delay = 1000;
-        int period = 1000;
-        timer = new Timer();
-        interval = 3600;
-        timer.scheduleAtFixedRate(new TimerTask() {
-
-        }, delay, period);
-
-    private static final int setInterval() {
-        if (interval == 1)
-            timer.cancel();
-        return --interval;
+        }       
     }
 
-    public String printCommands(int numCommands){
-        
-        System.out.println("A list of commands will be shown below. You can command me by typing <<. The commands are NOT case sensitive.");
-        System.out.println("<<Say Something -This will have me say something random, unless Ian forgot to write up multiple responses.");
-        System.out.println("<<Steve jobs died of ligma -Is joke");
-        System.out.println("<<TtB yourTextHere -Will hopefully translate the written words to 1s and 0s.");
-        return "";
-    }
 }
